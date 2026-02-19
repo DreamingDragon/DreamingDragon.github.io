@@ -29,6 +29,12 @@ body {
   padding-bottom: 5%;
 }
 
+@media (max-width: 600px) {
+  .machine {
+    grid-template-columns: 2fr 3fr; /* make output smaller, input larger */
+  }
+}
+
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -44,6 +50,12 @@ body {
   column-gap: 5%
 }
 
+@media (max-width: 600px) {
+  .input-grid {
+    gap: 3%;  /* smaller gap for small screens */
+  }
+}
+
 .slot {
   display: flex;
   
@@ -51,7 +63,7 @@ body {
   justify-content: center;
 
   width: 100%;
-  height: 100%; /* fill grid cell completely */
+  height: auto; /* fill grid cell completely */
 
   aspect-ratio: 1 / 2; 
 
