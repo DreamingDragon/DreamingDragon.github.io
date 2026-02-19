@@ -18,8 +18,7 @@ body {
    MACHINE
 ============================= */
 .machine {
-  width: min(90vw, 90vh);
-  max-width: 1200px;
+  width: min(100%, 90vh);
   aspect-ratio: 2 / 1;
 
   border: 6px solid #6e4b1f;
