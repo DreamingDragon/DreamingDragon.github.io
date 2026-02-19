@@ -21,6 +21,7 @@ body {
   width: min(100%, 90vh);
   min-height: 200px;
   aspect-ratio: 2 / 1;
+  flex-shrink: 0;
 
   border: 6px solid #6e4b1f;
   border-radius: 12px;
