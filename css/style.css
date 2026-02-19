@@ -80,3 +80,18 @@ body {
   height: 80%;
   object-fit: contain;
 }
+
+#addButton {
+  margin-top: 10px;      /* space below output slot */
+  padding: 8px 16px;     /* size */
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #8B5A2B;
+  background-color: #c48a3a;
+  color: white;
+  cursor: pointer;
+}
+
+#addButton:hover {
+  background-color: #b3772f;
+}
