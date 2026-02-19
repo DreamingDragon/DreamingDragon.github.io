@@ -38,7 +38,7 @@ body {
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: calc((100% - 10% /* row gap */) / 2 * 2); /* slot wants 1:2 */
   
   justify-self: center;
   align-self: center;
