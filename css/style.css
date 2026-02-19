@@ -1,11 +1,34 @@
-.slot {
-  width: 50px;
-  height: 50px;
-  border: 1px solid red;
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  width: 60%;     /* takes 60% of machine width */
+  height: 80%;    /* takes 80% of machine height */
+
+  gap: 5%;        /* spacing scales with box */
 }
 
 .machine {
-  width: 600px;
-  height: 300px;
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 2 / 1;
   border: 1px solid blue;
 }
+
+.slot {
+  width: 100%;         /* fill its grid cell */
+  aspect-ratio: 1 / 1; /* always square */
+
+  border: 3px solid #8B5A2B;
+  background-color: #c48a3a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.output-slot {
+  width: 30%;          /* relative to machine */
+  aspect-ratio: 1 / 1; /* square result */
+}
+
