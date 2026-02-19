@@ -1,6 +1,7 @@
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 
   width: 60%;     /* takes 60% of machine width */
   height: 80%;    /* takes 80% of machine height */
@@ -9,7 +10,16 @@
 }
 
 .machine {
-  width: 90vw;
+  display: grid;
+
+  grid-template-columns: 3fr 2fr;
+  /* left side = input slots
+     right side = output slot */
+
+  align-items: center;     /* vertical centering */
+  justify-items: center;   /* horizontal centering */
+
+  width: min(90vw, 90vh);
   max-width: 800px;
   aspect-ratio: 2 / 1;
   border: 1px solid blue;
@@ -28,7 +38,10 @@
 }
 
 .output-slot {
-  width: 30%;          /* relative to machine */
-  aspect-ratio: 1 / 1; /* square result */
+  width: 60%;
+  aspect-ratio: 1 / 1;
+
+  border: 4px solid #8B5A2B;
+  background: #c48a3a;
 }
 
