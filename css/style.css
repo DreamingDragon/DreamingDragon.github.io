@@ -72,6 +72,11 @@ body {
   background-color: #c48a3a;
 }
 
+.slot.selected {
+  border-color: gold;
+  box-shadow: 0 0 5px gold;
+}
+
 .output-container {
   display: flex;
   flex-direction: column;
