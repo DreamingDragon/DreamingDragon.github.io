@@ -20,7 +20,6 @@ body {
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 0; /* temporary placeholder */
 
   width: 100%;
   padding: 5%;
