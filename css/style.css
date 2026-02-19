@@ -35,7 +35,7 @@ body {
   justify-items: center;
 
   width: min(90vw, 90vh);
-  max-width: 1400px;
+  max-width: 1200px;
   aspect-ratio: 2 / 1;
 
   border: 6px solid #6e4b1f;
