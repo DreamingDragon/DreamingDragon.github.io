@@ -75,6 +75,13 @@ body {
   background-color: #c48a3a;
 }
 
+.output-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center horizontally */
+  gap: 10px;            /* space between output slot and button */
+}
+
 .slot img, .output-slot img {
   width: 80%;
   height: 80%;
