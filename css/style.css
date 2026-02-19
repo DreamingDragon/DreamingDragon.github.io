@@ -23,7 +23,7 @@ body {
 
   aspect-ratio: 2 / 1; /* maintain 4 columns x 2 rows square-ish ratio */
 
-  gap: 5%;
+  gap: 15%;
 }
 
 .machine {
@@ -34,7 +34,7 @@ body {
   justify-items: center;
 
   width: min(90vw, 90vh);
-  max-width: 800px;
+  max-width: 1200px;
   aspect-ratio: 2 / 1;
 
   border: 6px solid #6e4b1f;
