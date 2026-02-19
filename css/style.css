@@ -25,9 +25,6 @@ body {
 
   row-gap: 10%;
   column-gap: 5%
-
-  margin-top: 10%;   /* space above the grid */
-  margin-bottom: 10%; /* space below the grid */
 }
 
 .machine {
@@ -44,6 +41,9 @@ body {
   border: 6px solid #6e4b1f;
   border-radius: 12px;
   background-color: #a66a2c;
+
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .slot {
