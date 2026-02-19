@@ -27,7 +27,7 @@ body {
   border-radius: 12px;
   background-color: #a66a2c;
 
-  padding: 5%;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -39,8 +39,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
 
   width: 100%;
-  padding: 5%;
-  gap: 5%;
+  padding: 1rem;
+  gap: 1rem;
   box-sizing: border-box;
 
   justify-items: center;
@@ -120,8 +120,9 @@ body {
 ============================= */
 @media (max-width: 600px) {
   .input-grid {
-    gap: 3%;
-    padding: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .slot, .output-slot {
