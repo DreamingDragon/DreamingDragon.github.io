@@ -3,8 +3,8 @@
 ============================= */
 body {
   display: flex;
-  flex-direction: column;   /* stack title above machine */
-  align-items: center;      /* horizontal centering */
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   
   margin: 0;
@@ -15,36 +15,14 @@ body {
 }
 
 /* =============================
-   MACHINE CONTAINER
-============================= */
-.machine {
-  display: grid;
-  grid-template-columns: 3fr 2fr; /* input vs output column width */
-  align-items: center;
-  justify-items: center;
-
-  width: min(90vw, 90vh);
-  max-width: 1200px;
-  aspect-ratio: 2 / 1;           /* overall machine ratio */
-
-  border: 6px solid #6e4b1f;
-  border-radius: 12px;
-  background-color: #a66a2c;
-
-  padding: 5%;                   /* top/bottom and left/right padding */
-  box-sizing: border-box;
-}
-
-/* =============================
    INPUT GRID
 ============================= */
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr); /* rows will stretch proportionally */
-  
+  grid-template-rows: repeat(2, 1fr);
+
   width: 100%;
-  height: 100%; 
   padding: 5%;
   gap: 5%;
   box-sizing: border-box;
@@ -54,22 +32,21 @@ body {
 }
 
 /* =============================
-   INPUT SLOT
+   INPUT SLOTS
 ============================= */
 .slot {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 100%;           /* fill grid cell width */
-  height: 100%;          /* fill grid cell height */
-  aspect-ratio: 1 / 2;   /* tall rectangle */
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 2;     /* tall rectangle */
+  box-sizing: border-box;
 
   border: 3px solid #8B5A2B;
   border-radius: 6px;
   background-color: #c48a3a;
-
-  box-sizing: border-box; /* include border in size */
 }
 
 .slot.selected {
@@ -84,27 +61,16 @@ body {
 }
 
 /* =============================
-   OUTPUT CONTAINER
+   OUTPUT SLOT + BUTTON
 ============================= */
-.output-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* center horizontally */
-  justify-content: start;   /* top aligned inside column */
-  gap: 10%;                 /* space between output slot and button */
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-/* OUTPUT SLOT */
 .output-slot {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 80%;              /* smaller than column width */
-  aspect-ratio: 1 / 2;     /* tall rectangle */
+  width: 80%;
+  aspect-ratio: 1 / 2;
+  box-sizing: border-box;
 
   border: 4px solid #8B5A2B;
   border-radius: 8px;
@@ -117,8 +83,9 @@ body {
   object-fit: contain;
 }
 
-/* BUTTON BELOW OUTPUT */
+/* Output container already uses Bootstrap flex-column for stacking */
 #addButton {
+  margin-top: 10px;
   padding: 8px 16px;
   font-size: 1rem;
   border-radius: 6px;
@@ -136,16 +103,16 @@ body {
    RESPONSIVE MOBILE
 ============================= */
 @media (max-width: 600px) {
-  .machine {
-    grid-template-columns: 2fr 3fr; /* input larger, output smaller */
-  }
-
   .input-grid {
-    gap: 3%;  /* smaller gap */
+    gap: 3%;
     padding: 3%;
   }
 
   .slot, .output-slot {
-    aspect-ratio: 1 / 2; /* tall rectangles still */
+    aspect-ratio: 1 / 2;  /* keep tall rectangles */
+  }
+
+  #addButton {
+    width: 60%;  /* smaller button on mobile */
   }
 }
