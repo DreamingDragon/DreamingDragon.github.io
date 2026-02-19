@@ -21,10 +21,13 @@ body {
   width: 80%;
   height: auto; /* let height adjust */
 
-  aspect-ratio: 2 / 1; /* maintain 4 columns x 2 rows square-ish ratio */
+  aspect-ratio: 1 / 1; 
 
-  row-gap: 5%;
-  column-gap: 10%
+  row-gap: 10%;
+  column-gap: 5%
+
+  margin-top: 10%;   /* space above the grid */
+  margin-bottom: 10%; /* space below the grid */
 }
 
 .machine {
