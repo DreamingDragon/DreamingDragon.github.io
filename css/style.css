@@ -135,7 +135,7 @@ body {
     height: 100vh;     /* full screen height */
     aspect-ratio: auto; /* ignore the previous ratio */
     max-width: none;   /* remove previous max-width */
-    margin: 0;         /* fill entire screen */
+    margin: auto;         /* fill entire screen */
   }
 }
 
