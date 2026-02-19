@@ -23,7 +23,8 @@ body {
 
   aspect-ratio: 2 / 1; /* maintain 4 columns x 2 rows square-ish ratio */
 
-  gap: 15%;
+  row-gap: 5%;
+  column-gap: 10%
 }
 
 .machine {
