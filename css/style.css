@@ -18,6 +18,10 @@ body {
    MACHINE
 ============================= */
 .machine {
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+   
   width: min(100%, 90vh);
   min-height: 200px;
   aspect-ratio: 3 / 2;
