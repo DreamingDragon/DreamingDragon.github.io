@@ -63,7 +63,9 @@ body {
   justify-content: center;
 
   width: 100%;
+  max-width: 100%;
   height: auto; /* fill grid cell completely */
+  max-height: 100%;
 
   aspect-ratio: 1 / 2; 
 
