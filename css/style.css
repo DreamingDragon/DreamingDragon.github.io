@@ -7,7 +7,9 @@
   align-self: center;
 
   width: 80%;
-  height: 80%;
+  height: auto; /* let height adjust */
+
+  aspect-ratio: 2 / 1; /* maintain 4 columns x 2 rows square-ish ratio */
 
   gap: 5%;
 }
