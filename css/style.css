@@ -75,3 +75,8 @@ body {
   background-color: #c48a3a;
 }
 
+.slot img, .output-slot img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
