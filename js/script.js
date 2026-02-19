@@ -5,17 +5,24 @@ const slots = document.querySelectorAll('.input-grid .slot');
 function incrementSlotNumber(slot) {
   console.log("Incrementing slot:", slot.id);
 
-  // Example: swap dataset value to next number (placeholder logic)
+  // 1️⃣ Get current value and compute next
   let currentValue = parseInt(slot.dataset.value || 0, 10);
-  let nextValue = (currentValue + 1) % 12; // wrap around 0-11
+  let nextValue = (currentValue + 1) % 12;
   slot.dataset.value = nextValue;
 
-  // Optional: animate the slot (rotate/flip)
+  // 2️⃣ Select the <img> inside the slot
+  const img = slot.querySelector('img');
+  if (!img) return;
+
+  // 3️⃣ Animate flip
   slot.style.transition = "transform 0.3s";
-  slot.style.transform = "rotateY(180deg)";
+  slot.style.transform = "rotateY(90deg)"; // halfway flip
+
+  // 4️⃣ After 150ms (halfway), swap image
   setTimeout(() => {
-    slot.style.transform = "rotateY(0deg)";
-  }, 300);
+    img.src = `art_assets/glyphs/Glyph_${nextValue}.svg`;
+    slot.style.transform = "rotateY(0deg)"; // complete flip
+  }, 150);
 }
 
 // Attach events to each slot
