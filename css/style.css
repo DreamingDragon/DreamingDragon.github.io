@@ -25,7 +25,6 @@
 
   border: 6px solid #6e4b1f;
   border-radius: 12px;
-
   background-color: #a66a2c;
 }
 
@@ -36,11 +35,11 @@
   justify-content: center;
 
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%; /* fill grid cell completely */
+  max-height: 100%; /* optional safety */
 
   border: 3px solid #8B5A2B;
   border-radius: 6px;
-
   background-color: #c48a3a;
 }
 
@@ -55,7 +54,6 @@
 
   border: 4px solid #8B5A2B;
   border-radius: 8px;
-
   background-color: #c48a3a;
 }
 
