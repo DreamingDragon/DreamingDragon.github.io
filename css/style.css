@@ -20,7 +20,7 @@ body {
 .machine {
   width: min(100%, 90vh);
   min-height: 200px;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 3 / 2;
   flex-shrink: 0;
 
   border: 6px solid #6e4b1f;
