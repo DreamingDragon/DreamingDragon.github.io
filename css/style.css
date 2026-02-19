@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  
+  justify-self: center;
+  align-self: center;
 
   width: 80%;
   height: 80%;
@@ -12,6 +15,7 @@
 .machine {
   display: grid;
   grid-template-columns: 3fr 2fr;
+  
   align-items: center;
   justify-items: center;
 
@@ -27,6 +31,7 @@
 
 .slot {
   display: flex;
+  
   align-items: center;
   justify-content: center;
 
@@ -41,6 +46,7 @@
 
 .output-slot {
   display: flex;
+  
   align-items: center;
   justify-content: center;
 
