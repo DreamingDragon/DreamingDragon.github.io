@@ -320,7 +320,7 @@ body {
   display: flex;
   justify-content: center;  /* center horizontally */
   gap: 20px;                /* space between buttons */
-  margin-top: 16px;         /* space above the buttons */
+  margin-top: 0px;         /* space above the buttons */
 }
 #addButton {
   width: 70px;
