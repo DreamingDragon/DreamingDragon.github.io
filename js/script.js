@@ -63,14 +63,36 @@ function calculateMachineOutput() {
   // 5️⃣ Sum them
   const total = firstNumber + secondNumber;
 
-  // 6️⃣ Update output slot
+  // 6️⃣ Update output slot value
+  const output = document.getElementById('result');
+  output.dataset.value = total;
+  console.log("Output total is: ", total);
 
-  // Optional: display total as decimal
-  console.log("Output totale is: ",total);
+  // 7️⃣ Update the output slots to match the value
+  updateOutputImage(total);
+}
 
-  // Optional: also update the image if you want
-  // const img = outputSlot.querySelector('img');
-  // if (img) img.src = `art_assets/glyphs/Glyph_${total % 12}.svg`; // example
+function updateOutputImage(total) {
+  // 1️⃣ Convert total to base-12 string
+  let base12 = total.toString(12);
+
+  // 2️⃣ Take last 4 digits (pad with 0 if needed)
+  base12 = base12.padStart(4, '0'); // ensures at least 4 digits
+  const last4 = base12.slice(-4);    // last 4 digits
+
+  // 3️⃣ Select the 4 output cells (2x2)
+  const outputCells = document.querySelectorAll('#result .output-cell');
+
+  outputCells.forEach((cell, index) => {
+    const digit = parseInt(last4[index], 12); // get value 0–11
+    const img = cell.querySelector('img');
+    if (img) {
+      img.src = `art_assets/outputglyphs/OutputGlyph_${digit}.svg`;
+    }
+
+    // Store value in dataset for reference
+    cell.dataset.value = digit;
+  });
 }
 
 // Attach events to each slot
