@@ -185,3 +185,11 @@ body {
     width: 60%;  /* smaller button on mobile */
   }
 }
+
+/* Bootstrap Override */
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 auto; /* overrides Bootstrap's flex-basis behavior */
+    width: 65%;     /* your new width */
+  }
+}
