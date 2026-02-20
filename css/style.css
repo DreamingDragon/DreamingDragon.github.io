@@ -18,6 +18,10 @@ body {
   overflow-y: auto;
 }
 
+.no-select {
+  user-select: none;
+}
+
 /* =============================
    MACHINE
 ============================= */
