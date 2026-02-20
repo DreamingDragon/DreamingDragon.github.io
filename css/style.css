@@ -94,10 +94,10 @@ body {
 
   width: min(100%, 90vh);
   min-height: 200px;
-  aspect-ratio: 3 / 2;
+  /* aspect-ratio: 3 / 2; */
   flex-shrink: 0;
 
-  padding: 1rem;
+  padding: 3rem;
   box-sizing: border-box;
 
   border: 6px solid #6e4b1f;
