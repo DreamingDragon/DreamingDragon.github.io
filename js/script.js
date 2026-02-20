@@ -3,6 +3,7 @@ const slots = document.querySelectorAll('.input-grid .slot');
 ///////////////////////////////////////////////////////////////////////////////////////
 // Function to increment slot number
 function incrementSlotNumber(slot) {
+  console.log("Incrementing slot:", slot.id);
   slot.style.pointerEvents = "none";
 
   let currentValue = parseInt(slot.dataset.value || 0, 10);
@@ -25,6 +26,7 @@ function incrementSlotNumber(slot) {
     img.classList.remove("dialing");
     slot.style.pointerEvents = "auto";
   }, { once: true });
+  console.log("Value set to:", slot.dataset.value);
 }
 
 
