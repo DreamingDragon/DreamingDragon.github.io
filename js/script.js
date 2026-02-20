@@ -73,26 +73,13 @@ function calculateMachineOutput() {
 }
 
 // Helper: spins an image while preserving any CSS flip
-function spinOutputCell(img) {
-  // Determine current flip from CSS classes
-  const scaleX = img.classList.contains('flip-h') ? -1 : 1;
-  const scaleY = img.classList.contains('flip-v') ? -1 : 1;
+function spinOutputCell(cell) {
+  const wrapper = cell.querySelector('.spin-wrapper');
+  if (!wrapper) return;
 
-  // Reset previous animation
-  img.style.animation = 'none';
-  img.style.transform = `scaleX(${scaleX}) scaleY(${scaleY}) rotateY(0deg)`;
-
-  // Force reflow to restart animation
-  void img.offsetWidth;
-
-  // Apply spin animation
-  img.style.animation = 'spin 0.4s ease-in-out';
-
-  // After animation, reset transform to just the flip
-  setTimeout(() => {
-    img.style.animation = '';
-    img.style.transform = `scaleX(${scaleX}) scaleY(${scaleY})`;
-  }, 400);
+  wrapper.classList.remove('spin');
+  void wrapper.offsetWidth; // restart animation
+  wrapper.classList.add('spin');
 }
 
 // Main function: updates 2x2 output slot based on total
@@ -119,7 +106,7 @@ function updateOutputImage(total) {
     cell.dataset.value = digit;
 
     // Trigger spin animation while preserving flip
-    spinOutputCell(img);
+    spinOutputCell(cell);
   });
 
   // Optionally: store total in the parent div's dataset
