@@ -1,6 +1,48 @@
 // Select all slots
 const slots = document.querySelectorAll('.input-grid .slot');
 ///////////////////////////////////////////////////////////////////////////////////////
+function animateSlotsToValue(targetValue = 0, slotSelector = '.slot') {
+  const slots = document.querySelectorAll(slotSelector);
+  if (slots.length === 0) return;
+
+  // Total duration includes last slot's delay + animation duration
+  const animationDuration = 350; // ms, matches your .dialing animation
+  const delayBetweenSlots = 100; // ms
+
+  slots.forEach((slot, index) => {
+    const img = slot.querySelector('img');
+    if (!img) return;
+
+    slot.style.pointerEvents = 'none';
+
+    const delay = index * delayBetweenSlots;
+    setTimeout(() => {
+      // Start the magic animation
+      slot.classList.add('dialing');
+
+      // Swap glyph at midpoint
+      setTimeout(() => {
+        slot.dataset.value = targetValue;
+        img.src = `art_assets/glyphs/Glyph_${targetValue}.svg`;
+      }, animationDuration / 2);
+
+      // Cleanup when animation ends
+      slot.addEventListener('animationend', () => {
+        slot.classList.remove('dialing');
+        slot.style.pointerEvents = 'auto';
+      }, { once: true });
+    }, delay);
+  });
+
+  // Call calculateMachineOutput after the last slot finishes
+  const totalTime = (slots.length - 1) * delayBetweenSlots + animationDuration;
+  setTimeout(() => {
+    if (typeof calculateMachineOutput === 'function') {
+      calculateMachineOutput();
+    }
+  }, totalTime);
+}
+///////////////////////////////////////////////////////////////////////////////////////
 // Function to increment slot number
 function incrementSlotNumber(slot) {
   console.log("Incrementing slot:", slot.id);
@@ -131,7 +173,13 @@ function spinOutputCell(cell) {
   void cell.offsetWidth;
   cell.classList.add('spin');
 }
-//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// Do a cute start animation
+window.addEventListener('DOMContentLoaded', () => {
+  animateSlotsToValue(0); // all slots reset to zero with magic animation
+});
+
 // Attach events to each slot
 slots.forEach(slot => {
   // Highlight on press
@@ -158,3 +206,5 @@ slots.forEach(slot => {
     slot.classList.remove('selected');
   });
 });
+
+
