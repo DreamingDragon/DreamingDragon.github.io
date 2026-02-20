@@ -157,6 +157,16 @@ body {
   background-color: #b3772f;
 }
 
+@keyframes spin {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.spin {
+  animation: spin 0.4s ease-in-out;
+}
+
 /* =============================
    RESPONSIVE MOBILE
 ============================= */
