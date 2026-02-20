@@ -49,6 +49,9 @@ body {
 
   justify-items: center;
   align-items: start; /* align slots to top of cell */
+
+  /* 3D flip set up */
+  perspective: 1000px;
 }
 
 /* =============================
@@ -67,6 +70,11 @@ body {
   border: 3px solid #8B5A2B;
   border-radius: 6px;
   background-color: #c48a3a;
+
+  /* 3D flip setup */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease-in-out;
 }
 
 .slot.selected {
@@ -78,6 +86,10 @@ body {
   width: 80%;
   height: 80%;
   object-fit: contain;
+
+  /* 3D flip setup */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 /* =============================
