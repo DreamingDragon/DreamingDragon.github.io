@@ -1,6 +1,6 @@
 // Select all slots
 const slots = document.querySelectorAll('.input-grid .slot');
-
+///////////////////////////////////////////////////////////////////////////////////////
 // Function to increment slot number (skeleton)
 function incrementSlotNumber(slot) {
   console.log("Incrementing slot:", slot.id);
@@ -35,7 +35,7 @@ function incrementSlotNumber(slot) {
     slot.style.pointerEvents = "auto";
   }, 450); // matches 0.2s + 0.2s animation
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////
 function calculateMachineOutput() {
   // 1️⃣ Select all 8 input slots
   const slots = Array.from(document.querySelectorAll('.slot'));
@@ -44,7 +44,7 @@ function calculateMachineOutput() {
     console.error("Not enough slots found!");
     return;
   }
-
+///////////////////////////////////////////////////////////////////////////////////////////////
   // 2️⃣ Helper function to convert 4 slots to base-10
   function slotsToNumber(slotArray) {
     return slotArray.reduce((sum, slot, index) => {
@@ -71,49 +71,40 @@ function calculateMachineOutput() {
   // 7️⃣ Update the output slots to match the value
   updateOutputImage(total);
 }
-
-// Helper: spins an image while preserving any CSS flip
-function spinOutputCell(cell) {
-  const wrapper = cell.querySelector('.spin-wrapper');
-  if (!wrapper) return;
-
-  wrapper.classList.remove('spin');
-  void wrapper.offsetWidth; // restart animation
-  wrapper.classList.add('spin');
-}
-
-// Main function: updates 2x2 output slot based on total
+///////////////////////////////////////////////////////////////////////////////////////////////////
 function updateOutputImage(total) {
   // Convert total to base-12 string
-  let base12 = total.toString(12);
-
-  // Take last 4 digits, pad if necessary
-  base12 = base12.padStart(4, '0');
+  let base12 = total.toString(12).padStart(4, '0');
   const last4 = base12.slice(-4);
 
-  // Select the 4 output cells
   const outputCells = document.querySelectorAll('#result .output-cell');
 
   outputCells.forEach((cell, index) => {
-    const digit = parseInt(last4[index], 12); // 0–11
+    const digit = parseInt(last4[index], 12);
     const img = cell.querySelector('img');
     if (!img) return;
 
-    // Update the image src
-    img.src = `art_assets/glyphs/OutputGlyph_${digit}.svg`;
+    // Restart spin animation on the CELL
+    spinOutputCell(cell)
 
-    // Store value in dataset for reference
-    cell.dataset.value = digit;
-
-    // Trigger spin animation while preserving flip
-    spinOutputCell(cell);
+    // Swap glyph halfway through the spin (180°)
+    setTimeout(() => {
+      img.src = `art_assets/glyphs/OutputGlyph_${digit}.svg`;
+      cell.dataset.value = digit;
+    }, 200); // half of 0.4s spin
   });
 
-  // Optionally: store total in the parent div's dataset
-  const outputSlot = document.getElementById('result');
-  outputSlot.dataset.value = total;
+  // Store total in parent div
+  document.getElementById('result').dataset.value = total;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////
+// Helper: spins an image while preserving any CSS flip
+function spinOutputCell(cell) {
+  cell.classList.remove('spin');
+  void cell.offsetWidth;
+  cell.classList.add('spin');
+}
+//////////////////////////////////////////////////////////////////////////////////
 // Attach events to each slot
 slots.forEach(slot => {
   // Highlight on press
