@@ -98,7 +98,7 @@ function updateOutputImage(total) {
 
     // After half the animation, update the image
     setTimeout(() => {
-      img.src = `art_assets/outputglyphs/OutputGlyph_${digit}.svg`;
+      img.src = `art_assets/glyphs/OutputGlyph_${digit}.svg`;
       cell.dataset.value = digit;
     }, 200); // half of 0.4s animation
 
