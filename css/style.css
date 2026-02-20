@@ -89,13 +89,19 @@ body {
   position: relative;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
-  width: min(100%, 90vh);
-  min-height: 200px;
+  width: 90%;           /* scale with screen width */
+  max-width: 700px;     /* cap on very wide screens */
+  min-height: 300px;    /* ensure enough height for slots */
+  margin: 0 auto;    
+   
+  /* width: min(100%, 90vh);
+  min-height: 200px; */
   /* aspect-ratio: 3 / 2; */
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 
   padding: 3rem;
   box-sizing: border-box;
@@ -380,10 +386,27 @@ body {
     padding: 1rem;
   }
 
+@media (max-width: 480px) {
+  .machine {
+    width: 95%;
+    min-height: 250px;
+  }
+  .slot {
+    aspect-ratio: 1 / 2; /* still rectangle */
+  }
+}
+
 /* Bootstrap Override */
 @media (min-width: 768px) {
   .col-md-6 {
     flex: 0 0 auto; /* overrides Bootstrap's flex-basis behavior */
     width: 65%;     /* your new width */
   }
+}
+
+.col-12.col-md-6.d-flex.flex-column.justify-content-center {
+  flex: 1 1 50%;  /* grow/shrink with container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
