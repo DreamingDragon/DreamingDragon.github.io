@@ -315,7 +315,13 @@ body {
   display: block;     /* remove spacing under img */
 }
 
-/* Output container already uses Bootstrap flex-column for stacking */
+/* Flex container for buttons */
+.machine-output-buttons {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  gap: 20px;                /* space between buttons */
+  margin-top: 16px;         /* space above the buttons */
+}
 #addButton {
   width: 70px;
   height: 70px;
