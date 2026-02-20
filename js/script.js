@@ -5,6 +5,9 @@ const slots = document.querySelectorAll('.input-grid .slot');
 function incrementSlotNumber(slot) {
   console.log("Incrementing slot:", slot.id);
 
+  // 🚫 disable clicks during animation
+  slot.style.pointerEvents = "none";
+
   // 1️⃣ Get current value and compute next
   let currentValue = parseInt(slot.dataset.value || 0, 10);
   let nextValue = (currentValue + 1) % 12;
@@ -26,6 +29,11 @@ function incrementSlotNumber(slot) {
     slot.style.transition = "transform 0.2s ease-out";
     slot.style.transform = "rotateY(0deg)";
   }, 200);
+
+  // ✅ Re-enable clicks after full flip duration
+  setTimeout(() => {
+    slot.style.pointerEvents = "auto";
+  }, 400); // matches 0.2s + 0.2s animation
 }
 
 // Attach events to each slot
