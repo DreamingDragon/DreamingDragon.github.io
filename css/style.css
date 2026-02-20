@@ -314,8 +314,8 @@ body {
   margin-top: 0px;         /* space above the buttons */
 }
 #addButton {
-  width: 70px;
-  height: 70px;
+  width: clamp(36px, 6vmin, 70px);
+  height: clamp(36px, 6vmin, 70px);
   border-radius: 50%;
 
   border: 4px solid #6e4b1f;
@@ -342,8 +342,8 @@ body {
 }
 
 #clearButton {
-  width: 70px;
-  height: 70px;
+  width: clamp(36px, 6vmin, 70px);
+  height: clamp(36px, 6vmin, 70px);
   border-radius: 50%;
   
   border: 4px solid #6e4b1f;
