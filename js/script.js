@@ -64,11 +64,9 @@ function calculateMachineOutput() {
   const total = firstNumber + secondNumber;
 
   // 6️⃣ Update output slot
-  const outputSlot = document.getElementById('result');
-  if (!outputSlot) return;
 
   // Optional: display total as decimal
-  outputSlot.textContent = total;
+  console.log("Output totale is: ",total);
 
   // Optional: also update the image if you want
   // const img = outputSlot.querySelector('img');
