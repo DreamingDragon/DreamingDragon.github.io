@@ -113,7 +113,7 @@ function updateOutputImage(total) {
     if (!img) return;
 
     // Update the image src
-    img.src = `art_assets/outputglyphs/OutputGlyph_${digit}.svg`;
+    img.src = `art_assets/glyphs/OutputGlyph_${digit}.svg`;
 
     // Store value in dataset for reference
     cell.dataset.value = digit;
