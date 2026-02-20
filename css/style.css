@@ -93,7 +93,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: min(90%, 90vh);           /* scale with screen width */
+  width: max(90%, 90vh); /* scale with screen width */
   max-width: 700px;     /* cap on very wide screens */
   min-height: 300px;    /* ensure enough height for slots */
   max-height: 90vh;
