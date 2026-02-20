@@ -96,7 +96,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: fit-content;
   height: auto;
   min-height: 300px;    
   margin: 20px auto; 
