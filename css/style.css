@@ -129,6 +129,11 @@ body {
   transform: scaleY(-1);
 }
 
+/* Horizontal and Vertical flip */
+.flip-hv {
+  transform: scaleX(-1) scaleY(-1);
+}
+
 .output-cell img {
   width: 100%;
   height: 100%;
