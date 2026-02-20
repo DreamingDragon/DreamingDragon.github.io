@@ -13,17 +13,16 @@ function incrementSlotNumber(slot) {
   const img = slot.querySelector("img");
   if (!img) return;
 
-  // start mechanical dial animation
-  img.classList.add("dialing");
+  // start slot animation
+  slot.classList.add("dialing");
 
-  // swap glyph at midpoint
+  // swap glyph at midpoint of animation
   setTimeout(() => {
     img.src = `art_assets/glyphs/Glyph_${nextValue}.svg`;
-  }, 200);
+  }, 200); // half of 0.4s animation
 
-  // remove class and re-enable pointer events
-  img.addEventListener("animationend", () => {
-    img.classList.remove("dialing");
+  slot.addEventListener("animationend", () => {
+    slot.classList.remove("dialing");
     slot.style.pointerEvents = "auto";
   }, { once: true });
   console.log("Value set to:", slot.dataset.value);
