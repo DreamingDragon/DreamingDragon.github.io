@@ -174,7 +174,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
 
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   gap: clamp(0.1rem, 2%, 2rem);
   box-sizing: border-box;
   flex-shrink: 0;
