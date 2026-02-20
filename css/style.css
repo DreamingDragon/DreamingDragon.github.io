@@ -97,6 +97,9 @@ body {
 ============================= */
 .output-slot {
   display: flex;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  grid-template-rows: 1fr 1fr;    /* two rows */
+   
   align-items: center;
   justify-content: center;
 
@@ -109,6 +112,7 @@ body {
   background-color: #c48a3a;
 
   overflow: hidden;
+  gap: 0;
 }
 
 .output-slot img {
