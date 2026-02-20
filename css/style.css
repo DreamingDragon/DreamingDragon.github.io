@@ -38,6 +38,14 @@ body {
 /* =============================
    INPUT GRID
 ============================= */
+.input-group {
+  width: 100%;
+}
+
+.top-group {
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
 .input-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
