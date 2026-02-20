@@ -14,15 +14,18 @@ function incrementSlotNumber(slot) {
   const img = slot.querySelector('img');
   if (!img) return;
 
-  // 3️⃣ Animate flip
-  slot.style.transition = "transform 0.3s";
-  slot.style.transform = "rotateY(90deg)"; // halfway flip
+  // 3️⃣ Start first half of flip (rotate 90deg)
+  slot.style.transform = "rotateY(90deg)";
+  slot.style.transition = "transform 0.2s ease-in";// halfway flip
 
-  // 4️⃣ After 150ms (halfway), swap image
+  // 4️⃣ Swap image halfway through
   setTimeout(() => {
     img.src = `art_assets/glyphs/Glyph_${nextValue}.svg`;
-    slot.style.transform = "rotateY(0deg)"; // complete flip
-  }, 150);
+
+  // 5️⃣ Complete flip back to 0deg
+    slot.style.transition = "transform 0.2s ease-out";
+    slot.style.transform = "rotateY(0deg)";
+  }, 200);
 }
 
 // Attach events to each slot
