@@ -107,12 +107,25 @@ body {
   border: 4px solid #8B5A2B;
   border-radius: 8px;
   background-color: #c48a3a;
+
+  overflow: hidden;
 }
 
 .output-slot img {
   width: 80%;
   height: 80%;
   object-fit: contain;
+}
+
+.output-cell {
+  flex: 1;           /* evenly divide space among 4 cells */
+}
+
+.output-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills the cell completely */
+  display: block;     /* remove spacing under img */
 }
 
 /* Output container already uses Bootstrap flex-column for stacking */
