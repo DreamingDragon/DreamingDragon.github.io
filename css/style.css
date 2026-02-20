@@ -248,6 +248,11 @@ body {
 
   transform-style: preserve-3d;
   backface-visibility: hidden;
+
+  border-radius: 4px; /* slightly rounded edges */
+  box-shadow:
+  inset 1px 1px 2px rgba(255,255,255,0.5),  /* top-left highlight */
+  inset -1px -1px 2px rgba(0,0,0,0.4);     /* bottom-right shadow */
 }
 /* =============================
    OUTPUT SLOT + BUTTON
