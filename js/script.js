@@ -33,7 +33,7 @@ function incrementSlotNumber(slot) {
   // ✅ Re-enable clicks after full flip duration
   setTimeout(() => {
     slot.style.pointerEvents = "auto";
-  }, 400); // matches 0.2s + 0.2s animation
+  }, 600); // matches 0.2s + 0.2s animation
 }
 
 // Attach events to each slot
