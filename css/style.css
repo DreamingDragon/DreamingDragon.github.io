@@ -207,24 +207,38 @@ body {
 
   width: 100%;
   aspect-ratio: 1 / 2; /* tall rectangle */
-  height: auto;         /* auto height based on width */
+  height: auto;
   box-sizing: border-box;
 
   border: 3px solid #8B5A2B;
   border-radius: 6px;
-  background-color: #c48a3a;
+
+  /* Layered gradient for metallic depth */
+  background:
+    linear-gradient(145deg, #d2a14a, #b57c34),   /* base gradient */
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent 60%), /* subtle highlight */
+    radial-gradient(circle at 70% 70%, rgba(0,0,0,0.2), transparent 60%);      /* subtle shadow */
+
+  /* 3D feel */
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.25),  /* top highlight inside */
+    inset 0 -2px 4px rgba(0,0,0,0.3),        /* bottom shadow inside */
+    0 2px 6px rgba(0,0,0,0.25);              /* external soft shadow */
 
   /* 3D flip setup */
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  transition: transform 0.4s ease-in-out;
-   
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease;
+
   cursor: pointer;
 }
 
 .slot.selected {
   border-color: gold;
-  box-shadow: 0 0 5px gold;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    inset 0 -2px 4px rgba(0,0,0,0.35),
+    0 2px 8px gold;   /* subtle golden glow */
 }
 
 .slot img {
@@ -232,11 +246,9 @@ body {
   height: 80%;
   object-fit: contain;
 
-  /* 3D flip setup */
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
-
 /* =============================
    OUTPUT SLOT + BUTTON
 ============================= */
