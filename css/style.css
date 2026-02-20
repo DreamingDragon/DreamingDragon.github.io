@@ -28,6 +28,15 @@ body {
     0 2px 3px rgba(0,0,0,0.5);
 }
 
+.machine-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  margin: 12px auto 0;
+  background: linear-gradient(to right, transparent, #8b6b1f, transparent);
+}
+
 .machine {
   display:flex;
   justify-content: center; 
