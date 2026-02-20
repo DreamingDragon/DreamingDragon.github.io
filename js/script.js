@@ -13,13 +13,13 @@ function incrementSlotNumber(slot) {
   const img = slot.querySelector("img");
   if (!img) return;
 
-  // start slot animation
+  // start magic animation
   slot.classList.add("dialing");
 
-  // swap glyph at midpoint of animation
+  // swap image at roughly midpoint
   setTimeout(() => {
     img.src = `art_assets/glyphs/Glyph_${nextValue}.svg`;
-  }, 200); // half of 0.4s animation
+  }, 175); // half of 0.35s
 
   slot.addEventListener("animationend", () => {
     slot.classList.remove("dialing");
