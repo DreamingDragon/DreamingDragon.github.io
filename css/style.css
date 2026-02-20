@@ -11,21 +11,69 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #f4f0e6;
+  background: radial-gradient(circle at center, #f4f0e6, #d8d2c0);
   font-family: sans-serif;
 }
 
 /* =============================
    MACHINE
 ============================= */
+.title-plate {
+  display: inline-block;
+  padding: 12px 40px;
+
+  background: linear-gradient(145deg, #c9a54d, #8b6b1f);
+  border: 4px solid #6e4b1f;
+  border-radius: 8px;
+
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    inset 0 -4px 6px rgba(0,0,0,0.4),
+    0 6px 0 #5a3d17,
+    0 8px 12px rgba(0,0,0,0.5);
+
+  margin: 20px auto;
+  text-align: center;
+}
+
+.title-plate::before,
+.title-plate::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 30% 30%, #e2c26a, #6e4b1f);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.5);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title-plate {
+  position: relative;
+}
+
+.title-plate::before {
+  left: 12px;
+}
+
+.title-plate::after {
+  right: 12px;
+}
+
 .machine-title {
   font-family: 'Cinzel', serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 4px;
-  color: #d4af37;
+  text-transform: uppercase;
+
+  color: #3b2a0f;
 
   text-shadow:
-    0 1px 0 #8b6b1f,
-    0 2px 3px rgba(0,0,0,0.5);
+    0 1px 0 rgba(255,255,255,0.3),
+    0 -1px 0 rgba(0,0,0,0.4);
+
+  margin: 0;
 }
 
 .machine-title::after {
