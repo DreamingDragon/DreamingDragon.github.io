@@ -115,14 +115,23 @@ body {
   gap: 0;
 }
 
-.output-slot img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-}
-
 .output-cell {
   flex: 1;           /* evenly divide space among 4 cells */
+}
+
+/* Horizontal flip */
+.flip-h {
+  transform: scaleX(-1);
+}
+
+/* Vertical flip */
+.flip-v {
+  transform: scaleY(-1);
+}
+
+/* Both flips */
+.flip-hv {
+  transform: scaleX(-1) scaleY(-1);
 }
 
 .output-cell img {
