@@ -91,7 +91,7 @@ body {
 .machine {
   position: relative;
 
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
