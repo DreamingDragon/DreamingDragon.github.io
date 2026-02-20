@@ -177,6 +177,24 @@ body {
   }
 }
 
+@media (orientation: landscape) {
+   .input-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+   
+     width: 100vw;
+     padding: 1rem;
+     gap: 1rem;
+     box-sizing: border-box;
+   
+     justify-items: center;
+     align-items: start; /* align slots to top of cell */
+   
+     /* 3D flip set up */
+     perspective: 1000px;
+   }
+}
+
   .slot, .output-slot {
     aspect-ratio: 1 / 2;  /* keep tall rectangles */
   }
