@@ -151,25 +151,6 @@ body {
 .machine span:nth-child(4) { top: 50%; right: 12px; transform: translateY(-50%); } /* Middle-right */
 .machine span:nth-child(5) { top: 12px; left: 50%; transform: translateX(-50%); }  /* Top-middle */
 .machine span:nth-child(6) { bottom: 12px; left: 50%; transform: translateX(-50%); } /* Bottom-middle */
-
-/* .machine {
-  display:flex;
-  justify-content: center; 
-  align-items: center;
-   
-  width: min(100%, 90vh);
-  min-height: 200px;
-  aspect-ratio: 3 / 2;
-  flex-shrink: 0;
-
-  border: 6px solid #6e4b1f;
-  border-radius: 12px;
-  background-color: #a66a2c;
-
-  padding: 1rem;
-  box-sizing: border-box;
-} */
-
 /* =============================
    INPUT GRID
 ============================= */
@@ -398,43 +379,6 @@ body {
     gap: 1rem;
     padding: 1rem;
   }
-
-@media (orientation: landscape) {
-  .machine {
-    width: 100vw;      /* full screen width */
-    height: 100vh;     /* full screen height */
-    aspect-ratio: auto; /* ignore the previous ratio */
-    max-width: none;   /* remove previous max-width */
-    margin: auto;         /* fill entire screen */
-  }
-}
-
-@media (orientation: landscape) {
-   .input-grid {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-   
-     width: 100vw;
-     padding: 1rem;
-     gap: 1rem;
-     box-sizing: border-box;
-   
-     justify-items: center;
-     align-items: start; /* align slots to top of cell */
-   
-     /* 3D flip set up */
-     perspective: 1000px;
-   }
-}
-
-  .slot, .output-slot {
-    aspect-ratio: 1 / 2;  /* keep tall rectangles */
-  }
-
-  #addButton {
-    width: 60%;  /* smaller button on mobile */
-  }
-}
 
 /* Bootstrap Override */
 @media (min-width: 768px) {
