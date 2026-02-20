@@ -251,8 +251,9 @@ body {
 
   border-radius: 4px; /* slightly rounded edges */
   box-shadow:
-  inset 1px 1px 2px rgba(255,255,255,0.5),  /* top-left highlight */
-  inset -1px -1px 2px rgba(0,0,0,0.4);     /* bottom-right shadow */
+     inset 1px 1px 2px rgba(255,255,255,0.5),  /* top-left highlight */
+     inset -1px -1px 2px rgba(0,0,0,0.4);     /* bottom-right shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes slotDial {
