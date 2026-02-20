@@ -83,6 +83,8 @@ body {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: transform 0.4s ease-in-out;
+   
+  cursor: pointer;
 }
 
 .slot.selected {
