@@ -73,25 +73,39 @@ function calculateMachineOutput() {
 }
 
 function updateOutputImage(total) {
-  // 1️⃣ Convert total to base-12 string
+  // Convert total to base-12 string
   let base12 = total.toString(12);
 
-  // 2️⃣ Take last 4 digits (pad with 0 if needed)
-  base12 = base12.padStart(4, '0'); // ensures at least 4 digits
-  const last4 = base12.slice(-4);    // last 4 digits
+  // Take last 4 digits (pad to ensure 4)
+  base12 = base12.padStart(4, '0');
+  const last4 = base12.slice(-4);
 
-  // 3️⃣ Select the 4 output cells (2x2)
   const outputCells = document.querySelectorAll('#result .output-cell');
 
   outputCells.forEach((cell, index) => {
-    const digit = parseInt(last4[index], 12); // get value 0–11
+    const digit = parseInt(last4[index], 12);
     const img = cell.querySelector('img');
-    if (img) {
-      img.src = `art_assets/outputglyphs/OutputGlyph_${digit}.svg`;
-    }
+    if (!img) return;
 
-    // Store value in dataset for reference
-    cell.dataset.value = digit;
+    // Remove previous spin class in case of rapid updates
+    img.classList.remove('spin');
+
+    // Trigger reflow to restart animation
+    void img.offsetWidth; 
+
+    // Add spin animation
+    img.classList.add('spin');
+
+    // After half the animation, update the image
+    setTimeout(() => {
+      img.src = `art_assets/outputglyphs/OutputGlyph_${digit}.svg`;
+      cell.dataset.value = digit;
+    }, 200); // half of 0.4s animation
+
+    // Remove spin class after animation completes
+    setTimeout(() => {
+      img.classList.remove('spin');
+    }, 400);
   });
 }
 
