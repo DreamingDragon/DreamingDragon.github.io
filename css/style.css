@@ -200,6 +200,7 @@ body {
   justify-content: center;
 
   width: 100%;
+  min-width: 100px
   aspect-ratio: 1 / 2; /* tall rectangle */
   height: auto;
   box-sizing: border-box;
