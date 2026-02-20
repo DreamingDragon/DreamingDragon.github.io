@@ -13,6 +13,9 @@ body {
   background-color: #f4f0e6;
   background: radial-gradient(circle at center, #f4f0e6, #d8d2c0);
   font-family: sans-serif;
+
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 /* =============================
@@ -94,10 +97,10 @@ body {
   align-items: center;
 
   width: min(100%, 100vh);
-  max-width: 700px;
-  height: min(90%, 90vh)
+  height: auto;
   min-height: 300px;    
   margin: 0 auto; 
+  
    
   /* width: min(100%, 90vh);
   min-height: 200px; */
